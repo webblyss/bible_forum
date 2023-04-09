@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1097213395083",
+    "project_id": "bible-forum",
+    "storage_bucket": "bible-forum.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1097213395083:android:12d714c5c0bcbac997548e",
+        "android_client_info": {
+          "package_name": "com.example.bible_forum"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1097213395083-7gkbc3dppu03ikova73pf9bo574ts369.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.bible_forum",
+            "certificate_hash": "54a0ff4d78da415d3cafdedc2843a77af6569f86"
+          }
+        },
+        {
+          "client_id": "1097213395083-ho15o0inm6r7hjiestcf1dnkng4blk65.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBngeMdYUEzNio2nLFIJ8Va6WZD-zr4w1M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1097213395083-5005o6t41j6kigaon79jg6j04o72visg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
