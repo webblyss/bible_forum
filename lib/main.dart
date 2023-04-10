@@ -1,8 +1,13 @@
-import 'package:bible_forum/screens/HomeScreen.dart';
 import 'package:bible_forum/screens/LoginScreen.dart';
+import 'package:bible_forum/utils/BibleController.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-void main() {
+import 'package:firebase_core/firebase_core.dart';
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  Get.put(BibleController());
+
   runApp(const MyApp());
 }
 
@@ -13,11 +18,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
+      theme: ThemeData.light(),
+      darkTheme: ThemeData.dark().copyWith(
+        scaffoldBackgroundColor: Colors.black,
       ),
-      home: const HomeScreen(),
+      themeMode: ThemeMode.system,
       initialRoute: "/",
       routes: {
         "/": (context)=> const LoginScreen(),

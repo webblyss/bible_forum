@@ -3,9 +3,10 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 class AuthController extends GetxController {
+  RxBool isLoading = false.obs;
   final GoogleSignIn _googleSignIn = GoogleSignIn();
   final FirebaseAuth _auth = FirebaseAuth.instance;
-  Rx<User> user = Rx<User>(null);
+  final Rx<User?> user = Rx<User?>(null);
 
   Future<UserCredential?> signInWithGoogle() async {
     try {
