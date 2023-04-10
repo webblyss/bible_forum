@@ -28,7 +28,7 @@ To get started with the Bible App, you can download the latest version from the 
 ## Installing
 1. Clone this repository:
 
-`git clone https://github.com/username/bible-app.git`
+`https://github.com/webblyss/bible_forum.git`
 
 2. Navigate to the project directory:
 
