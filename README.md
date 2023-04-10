@@ -1,16 +1,45 @@
-# bible_forum
+# Bible App
+
 
 A new Flutter project.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+Welcome to the Bible App! This is an open-source mobile application for reading and studying the Bible. The app is built using Flutter and GetX, and it's designed to be fast, easy to use, and accessible to all users
 
-A few resources to get you started if this is your first Flutter project:
+## Features
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- Search for Bible verses by keyword or reference
+- OAuth2 login with google
+- KJV bible reader
+- Prayer Forums
+- Bible study Forums
+- Calendar
+- Feeds
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Getting Started
+To get started with the Bible App, you can download the latest version from the Google Play Store or the Apple App Store. Alternatively, you can clone this repository and build the app from source.
+
+## Prerequisites
+- Flutter SDK (version 2.0 or higher)
+- Android Studio or Xcode
+- Git
+
+## Installing
+1. Clone this repository:
+
+`git clone https://github.com/username/bible-app.git`
+
+2. Navigate to the project directory:
+
+`cd bible-app`
+
+3. Install the app's dependencies:
+
+`flutter pub get`
+
+4. Run the app:
+
+`flutter run`
+
+
