@@ -4,6 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 
 import '../provider/AuthController.dart';
+import '../widget/LoadingWidget.dart';
 import 'HomeScreen.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -29,7 +30,6 @@ class _LoginScreenState extends State<LoginScreen> {
     } );
     controller.setLooping(true);
     controller.play();
-    // TODO: implement initState
     super.initState();
   }
 
@@ -104,7 +104,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         });
                       },
                       checkColor: Colors.white,
-                      fillColor: MaterialStateProperty.all<Color>(Colors.white),
+                      fillColor: MaterialStateProperty.all<Color>(Colors.green),
                     ),
                   )
                 ],
@@ -115,12 +115,45 @@ class _LoginScreenState extends State<LoginScreen> {
       ),
     );
   }
-  Future<void> loginWithGoogle() async {
-    final userCredential = await _authController.signInWithGoogle();
-    if (userCredential != null) return Get.to(()=>const HomeScreen(),transition: Transition.cupertino);
-      print("failed");
 
+  Future<Object?> loginWithGoogle() async {
+  if (!_isChecked) {
+    return Get.snackbar(
+      "Error",
+      "Agree to terms and condition",
+      backgroundColor: Colors.greenAccent,
+      snackPosition: SnackPosition.BOTTOM,
+      colorText: Colors.black
+    );
   }
+
+  try {
+    showDialog(
+      barrierDismissible: false,
+      context: context,
+      builder: (BuildContext context) {
+        return const LoadingPopup();
+      },
+    );
+    
+    final userCredential = await _authController.signInWithGoogle();
+    
+    if (userCredential != null) {
+      Get.to(() => const HomeScreen(), transition: Transition.cupertino);
+    } 
+  } catch (e) {
+    // Handle the error here
+  } finally {
+    // Close the loading popup
+    Navigator.of(context).pop();
+    Get.to(() => const HomeScreen(), transition: Transition.cupertino);
+  }
+
+  return null;
+}
+
+
+
 }
 
 

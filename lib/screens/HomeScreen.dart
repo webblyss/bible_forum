@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:line_icons/line_icons.dart';
 
+import '../utils/ThemeController.dart';
 import 'BibleScreen.dart';
 import 'Dashboard.dart';
 
@@ -14,6 +16,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  final ThemeController _themeController = Get.put(ThemeController());
 
 int currentScreen = 0;
 
@@ -30,7 +33,6 @@ int currentScreen = 0;
       width: MediaQuery.of(context).size.width,
       height: 40,
       decoration: BoxDecoration(
-        color: Colors.black,
         border: Border(
           top: BorderSide(
             color: Colors.black.withOpacity(0.6), // Set the color of the top border here

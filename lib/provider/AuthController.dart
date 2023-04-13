@@ -20,6 +20,7 @@ class AuthController extends GetxController {
       );
       final userCredential = await _auth.signInWithCredential(credential);
       user.value = userCredential.user!; // Store user information in user variable
+      
 
 
       return await _auth.signInWithCredential(credential);
