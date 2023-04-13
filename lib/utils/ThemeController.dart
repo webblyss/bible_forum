@@ -13,7 +13,7 @@ class ThemeController extends GetxController {
           primaryColor: Color(0xff2E3136),
           accentColor: Color(0xff9D9FA2),
           scaffoldBackgroundColor: Color(0xff1F1F23),
-          appBarTheme: AppBarTheme(
+          appBarTheme: const AppBarTheme(
             color: Color(0xff2E3136),
             iconTheme: IconThemeData(color: Colors.white),
             textTheme: TextTheme(
@@ -24,12 +24,12 @@ class ThemeController extends GetxController {
               ),
             ),
           ),
-          bottomNavigationBarTheme: BottomNavigationBarThemeData(
+          bottomNavigationBarTheme: const BottomNavigationBarThemeData(
             backgroundColor: Color(0xff2E3136),
             selectedItemColor: Colors.white,
             unselectedItemColor: Colors.grey,
           ),
-          textTheme: TextTheme(
+          textTheme: const TextTheme(
             bodyText1: TextStyle(
               color: Colors.white,
               fontSize: 16.0,
@@ -41,7 +41,7 @@ class ThemeController extends GetxController {
               fontWeight: FontWeight.w400,
             ),
           ),
-          iconTheme: IconThemeData(
+          iconTheme: const IconThemeData(
             color: Colors.white,
             size: 24.0,
           ),
@@ -51,7 +51,7 @@ class ThemeController extends GetxController {
           primaryColor: Color(0xff0088cc),
           accentColor: Color(0xff9D9FA2),
           scaffoldBackgroundColor: Colors.white,
-          appBarTheme: AppBarTheme(
+          appBarTheme: const AppBarTheme(
             color: Color(0xff0088cc),
             iconTheme: IconThemeData(color: Colors.white),
             textTheme: TextTheme(
@@ -62,12 +62,10 @@ class ThemeController extends GetxController {
               ),
             ),
           ),
-          bottomNavigationBarTheme: BottomNavigationBarThemeData(
+          bottomSheetTheme: const BottomSheetThemeData(
             backgroundColor: Color(0xff0088cc),
-            selectedItemColor: Colors.white,
-            unselectedItemColor: Colors.grey,
           ),
-          textTheme: TextTheme(
+          textTheme: const TextTheme(
             bodyText1: TextStyle(
               color: Colors.black,
               fontSize: 16.0,
