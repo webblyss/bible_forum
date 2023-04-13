@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../utils/BibleController.dart';
+import 'BibleText.dart';
 
 class Bible extends StatefulWidget {
   const Bible({Key? key}) : super(key: key);
@@ -25,6 +26,7 @@ class _BibleState extends State<Bible> {
               itemCount: controller.bibleData.length,
               itemBuilder: (context, index) {
                 List<dynamic> chapter = controller.bibleData[index]['CHAPTER'];
+                final book = controller.bibleData[index]['name'];
                 return ExpansionTile(
                   title: Text(controller.bibleData[index]['name']),
                   children: [
@@ -37,7 +39,18 @@ class _BibleState extends State<Bible> {
                         ),
                         itemCount: chapter.length,
                         itemBuilder: (context, index) {
-                        return Center(child: Text(chapter[index]['cnumber']));
+                        return Center(child: GestureDetector(
+                            onTap:(){
+                              setState(() {
+                                controller.book.value = book; //SET THE DEFAULT INDEX OF THE BOOK TAPED
+                                controller.bookChapter.value = chapter[index]['cnumber'];
+                              });
+                              // print(chapter[index]['cnumber']);
+                              Get.to(()=> BibleTextReader(
+                                chapter: chapter[index]['VERS'],
+                              ),transition: Transition.cupertino);
+                            },
+                            child: Text(chapter[index]['cnumber'])));
                         })
                   ],
                 );
