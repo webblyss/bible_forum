@@ -37,7 +37,12 @@ class _BibleState extends State<Bible> {
                         ),
                         itemCount: chapter.length,
                         itemBuilder: (context, index) {
-                        return Center(child: Text(chapter[index]['cnumber']));
+                          return Center(
+                            child: ElevatedButton(
+                              onPressed: () {},
+                              child: Text(chapter[index]['cnumber']),
+                            ),
+                          );
                         })
                   ],
                 );

@@ -17,11 +17,7 @@ class _LiveRoomState extends State<LiveRoom> {
     return Theme(
       data: _themeController.theme,
       child: Scaffold(
-        body: SafeArea(
-          child: Column(
-            children: [],
-          ),
-        ),
+        body: Stack(children: const []),
       ),
     );
   }

@@ -6,6 +6,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:line_icons/line_icons.dart';
 
 import '../utils/hex_color.dart';
+import 'Calendar.dart';
 import 'PrayerForum.dart';
 
 class DashBoard extends StatefulWidget {
@@ -100,10 +101,16 @@ class _DashBoardState extends State<DashBoard> {
                           : HexColor("#F8F8F8")),
                   _buildCard(
                       text: const Text("Calendar"),
-                      callback: () {},
-                      color: _themeController.isDarkMode.isTrue
-                          ? HexColor("##212023")
-                          : HexColor("#F8F8F8")),
+                      callback: () {
+                         setState(() {
+                          _tabIndex = 3;
+                        });
+                      },
+                      color:_tabIndex == 3
+                          ? Colors.blue
+                          : (_themeController.isDarkMode.isTrue
+                              ? HexColor("#212023")
+                              : HexColor("#F8F8F8"))),
                 ]),
               ),
               const Divider(
@@ -113,7 +120,7 @@ class _DashBoardState extends State<DashBoard> {
                   ? _buildFeedsList()
                   : _tabIndex == 1
                       ? const PrayersForum()
-                      : Container()
+                      : _tabIndex == 3 ?  const CalendarWidget() : Container()
             ],
           ),
         ),
@@ -149,6 +156,13 @@ class _DashBoardState extends State<DashBoard> {
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnl1gUXWSLwQoDniohmUeet4-ZJErM2YcNCg&usqp=CAU",
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXAE0QmaotyJ-gpDEdxCBQyfQoMo9tPsGcZg&usqp=CAU"
     ];
+
+    List<String> content = [
+      "Trust in the Lord with all your heart, and lean not on your own understanding; in all your ways acknowledge Him, and He shall direct your paths  - Proverbs 3:5-6 (NKJV)",
+      "For I know the thoughts that I think toward you, says the Lord, thoughts of peace and not of evil, to give you a future and a hope - Jeremiah 29:11 (NKJV)",
+      "But those who hope in the Lord will renew their strength. They will soar on wings like eagles; they will run and not grow weary, they will walk and not be faint",
+      "Come to me, all you who are weary and burdened, and I will give you rest",
+    ];
     return Expanded(
       child: ListView.builder(
           shrinkWrap: true,
@@ -179,9 +193,9 @@ class _DashBoardState extends State<DashBoard> {
                             ),
                             const SizedBox(height: 8),
                             Text(
-                              "For God so loved the world, that he gave his only Son, that whoever believes in him should not perish but have eternal life. For God did not send his Son into the world to condemn the world, but to save the world through him. Whoever believes in him is not condemned, but whoever does not believe is condemned already, because he has not believed in the name of the only Son of God",
+                              content[index],
                               style: TextStyle(
-                                  fontSize: 14, color: HexColor("#4c4c4c")),
+                                  fontSize: 14,),
                             ),
                             const SizedBox(height: 12),
                             Row(
